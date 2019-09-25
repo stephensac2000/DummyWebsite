@@ -9,14 +9,18 @@
                 z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
         })('c1fb6e81-265f-4160-66d3-5ca73595500c');
 
+        var urlParams = new URLSearchParams(window.location.search);
+        var visitorId = urlParams.get('visitorId') || 'dummyVisitorId';
+        var accountId = urlParams.get('accountId') || 'dummyAccountId'
+
         pendo.initialize({
             visitor: {
-                id: 'dummyVisitorId',   // Required if user is logged in
+                id: visitorId,   // Required if user is logged in
                 dummyVisitorMetaDataField: 'dummyVisitorMetaDataValue'
             },
 
             account: {
-                id: 'dummyAccountId', // Highly recommended
+                id: accountId, // Highly recommended
                 dummyAccountMetaDataField: 'dummyAccountMetaDataValue'
             }
         });
