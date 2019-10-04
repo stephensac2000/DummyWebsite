@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script>
+        (function(apiKey){
+            (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+            v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+                o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+                y=e.createElement(n);y.async=!0;y.src='https://pendo-link-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+                z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+        })('98a20ed5-e41a-4377-5081-1f9498b60606');
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var visitorId = urlParams.get('visitorId') || 'dummyVisitorId';
+        var accountId = urlParams.get('accountId') || 'dummyAccountId'
+
+        pendo.initialize({
+            visitor: {
+                id: visitorId,   // Required if user is logged in
+                dummyVisitorMetaDataField: 'dummyVisitorMetaDataValue'
+            },
+
+            account: {
+                id: accountId, // Highly recommended
+                dummyAccountMetaDataField: 'dummyAccountMetaDataValue'
+            }
+        });
+    </script>
+</head>
+<body>
+    <div>Hello World</div>
+    <div id="DummyDiv" style="margin-top:10px; border: 1px solid black;">This is some dummy div</div>
+</body>
+</html>
